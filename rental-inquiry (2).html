@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rental Open House Inquiry — Isaac Nagel | KW Premier Realty</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0F1F3D;
+    --navy-mid: #1B3060;
+    --gold: #C8993A;
+    --gold-light: #E8BC6A;
+    --cream: #F8F6F1;
+    --white: #FFFFFF;
+    --text: #0F1F3D;
+    --text-muted: #6B7A94;
+    --border: rgba(15,31,61,0.12);
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; }
+
+  header {
+    background: var(--navy);
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(200,153,58,0.25);
+  }
+  .logo { font-family: 'DM Serif Display', serif; color: var(--white); font-size: 1.6rem; letter-spacing: 0.01em; line-height: 1.1; text-decoration: none; }
+  .logo span { color: var(--gold); }
+  .back-link { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; }
+  .back-link:hover { color: var(--gold); }
+
+  main { max-width: 560px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+
+  .oh-badge { display: inline-block; background: var(--navy); color: var(--gold-light); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 1rem; }
+  h1 { font-family: 'DM Serif Display', serif; color: var(--navy); font-size: clamp(1.6rem, 5vw, 2.1rem); line-height: 1.2; margin-bottom: 0.6rem; }
+  h1 em { color: var(--gold); font-style: normal; }
+  .subtext { color: var(--text-muted); font-size: 14.5px; line-height: 1.6; margin-bottom: 2rem; max-width: 440px; }
+
+  .oh-form-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+  .oh-form { display: flex; flex-direction: column; gap: 0.9rem; }
+  .oh-field label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .oh-form input, .oh-form textarea {
+    width: 100%; padding: 13px 14px; border-radius: 10px;
+    border: 1px solid var(--border); font-family: inherit; font-size: 15px;
+    color: var(--text); background: var(--cream);
+  }
+  .oh-form input:focus, .oh-form textarea:focus { outline: none; border-color: var(--gold); background: var(--white); }
+  .oh-form textarea { resize: vertical; min-height: 70px; }
+  .oh-radio-row { display: flex; gap: 1.25rem; padding: 4px 2px; }
+  .oh-radio { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text); font-weight: 400; text-transform: none; letter-spacing: normal; cursor: pointer; }
+  .oh-radio input[type="radio"] { width: 16px; height: 16px; accent-color: var(--navy); cursor: pointer; }
+
+  .oh-consent { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--text-muted); line-height: 1.5; cursor: pointer; padding-top: 4px; }
+  .oh-consent input[type="checkbox"] { width: 17px; height: 17px; margin-top: 2px; flex-shrink: 0; accent-color: var(--navy); cursor: pointer; }
+
+  .oh-submit {
+    background: var(--navy); color: var(--white); border: none;
+    padding: 15px 24px; border-radius: 50px; font-size: 15px; font-weight: 600;
+    cursor: pointer; transition: opacity 0.15s; margin-top: 0.5rem;
+  }
+  .oh-submit:hover { opacity: 0.88; }
+
+  .oh-note { font-size: 12px; color: var(--text-muted); margin-top: 1rem; text-align: center; line-height: 1.5; }
+
+  .success-card { display: none; background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 1.75rem; text-align: center; }
+  .success-card h2 { font-family: 'DM Serif Display', serif; color: var(--navy); font-size: 1.4rem; margin-bottom: 0.5rem; }
+  .success-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+
+  footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text-muted); }
+  .equal-housing { margin-top: 6px; font-size: 11px; letter-spacing: 0.03em; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">Isaac Nagel <span>| The Nagel Team</span></a>
+  <a class="back-link" href="index.html">&larr; Back to home</a>
+</header>
+
+<main>
+  <span class="oh-badge">Rental Open House Inquiry</span>
+  <h1>Thanks for stopping by <em>today.</em></h1>
+  <p class="subtext">This form is for the <strong>rental</strong> currently open for viewing — if you're interested in renting this home, fill out the info below. This is a preliminary interest form, not a formal rental application — anyone who moves forward will complete the standard screening process. If anything here raises a question, reach out before submitting so we can talk it through.</p>
+
+  <div class="oh-form-card" id="ohFormCard">
+    <form class="oh-form" id="ohForm">
+      <div class="oh-field">
+        <label for="ohName">Full name *</label>
+        <input type="text" id="ohName" required>
+      </div>
+      <div class="oh-field">
+        <label for="ohPhone">Phone number *</label>
+        <input type="tel" id="ohPhone" required>
+      </div>
+      <div class="oh-field">
+        <label for="ohEmail">Email address *</label>
+        <input type="email" id="ohEmail" required>
+      </div>
+      <div class="oh-field">
+        <label for="ohOccupation">Occupation *</label>
+        <input type="text" id="ohOccupation" required>
+      </div>
+      <div class="oh-field">
+        <label for="ohIncome">Approximate combined gross monthly income *</label>
+        <input type="text" id="ohIncome" required>
+      </div>
+      <div class="oh-field">
+        <label for="ohCredit">Estimated credit-score range *</label>
+        <input type="text" id="ohCredit" required>
+      </div>
+      <div class="oh-field">
+        <label for="ohOccupants">Total number of occupants *</label>
+        <input type="number" id="ohOccupants" min="1" required>
+      </div>
+
+      <div class="oh-field">
+        <label>Do you have any pets? *</label>
+        <div class="oh-radio-row">
+          <label class="oh-radio"><input type="radio" name="ohPets" value="No" required> No</label>
+          <label class="oh-radio"><input type="radio" name="ohPets" value="Other" required> Other:</label>
+        </div>
+        <input type="text" id="ohPetsDetail" placeholder="Describe pet(s) — species, breed, size" style="margin-top:8px;">
+      </div>
+
+      <div class="oh-field">
+        <label>Have you ever had an eviction? *</label>
+        <div class="oh-radio-row">
+          <label class="oh-radio"><input type="radio" name="ohEviction" value="Yes" required> Yes</label>
+          <label class="oh-radio"><input type="radio" name="ohEviction" value="No" required> No</label>
+        </div>
+      </div>
+
+      <div class="oh-field">
+        <label for="ohNotes">Anything else you would like us to know?</label>
+        <textarea id="ohNotes"></textarea>
+      </div>
+
+      <label class="oh-consent">
+        <input type="checkbox" id="ohConsent" required>
+        <span>I consent to be contacted by phone, text, or email about this property. *</span>
+      </label>
+
+      <button type="submit" class="oh-submit">Send My Info</button>
+    </form>
+    <div class="oh-note">Trouble submitting? Text your info to <a href="sms:9524666356">(952) 466-6356</a> instead.</div>
+  </div>
+
+  <div class="success-card" id="ohSuccess">
+    <h2>You're all set!</h2>
+    <p>I'll be in touch soon.</p>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Isaac Nagel · The Nagel Team · Keller Williams Premier Realty · Lake Minnetonka
+  <div class="equal-housing">⌂ Equal Housing Opportunity</div>
+</footer>
+
+<script>
+  // TODO: paste your NEW unified Google Apps Script Web App URL here (same URL on all 6 forms)
+  var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6gShW2B6mgh1YqFE0BYzDHBVPWBQXkQdeNEsm6JE9u9-WF2XvYWjFQt10_v2wNKxT7Q/exec';
+
+  document.getElementById('ohForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('ohName').value.trim();
+    var phone = document.getElementById('ohPhone').value.trim();
+    var email = document.getElementById('ohEmail').value.trim();
+    var occupation = document.getElementById('ohOccupation').value.trim();
+    var income = document.getElementById('ohIncome').value.trim();
+    var credit = document.getElementById('ohCredit').value.trim();
+    var occupants = document.getElementById('ohOccupants').value.trim();
+    var petsChoice = document.querySelector('input[name="ohPets"]:checked');
+    var petsDetail = document.getElementById('ohPetsDetail').value.trim();
+    var evictionChoice = document.querySelector('input[name="ohEviction"]:checked');
+    var notes = document.getElementById('ohNotes').value.trim();
+    var consent = document.getElementById('ohConsent').checked;
+
+    if (!name || !phone || !email || !occupation || !income || !credit || !occupants) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    if (!petsChoice) { alert('Please answer the pets question.'); return; }
+    if (!evictionChoice) { alert('Please answer the eviction question.'); return; }
+    if (!consent) { alert('Please check the consent box to continue.'); return; }
+
+    var petsAnswer = petsChoice.value === 'No' ? 'No' : ('Other — ' + (petsDetail || 'not described'));
+
+    var submitBtn = document.querySelector('#ohForm .oh-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    var payload = {
+      sheet: 'RentalInquiry',
+      name: name,
+      phone: phone,
+      email: email,
+      occupation: occupation,
+      income: income,
+      credit: credit,
+      occupants: occupants,
+      pets: petsAnswer,
+      eviction: evictionChoice.value,
+      notes: notes,
+      consent: consent
+    };
+
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    })
+      .then(function() {
+        document.getElementById('ohFormCard').style.display = 'none';
+        document.getElementById('ohSuccess').style.display = 'block';
+      })
+      .catch(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send My Info';
+        alert("Something went wrong sending your info. Please text it to (952) 466-6356 instead.");
+      });
+  });
+</script>
+
+</body>
+</html>
