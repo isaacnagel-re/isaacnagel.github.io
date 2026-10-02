@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guess The Price — Isaac Nagel | KW Premier Realty</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0F1F3D;
+    --navy-mid: #1B3060;
+    --gold: #C8993A;
+    --gold-light: #E8BC6A;
+    --cream: #F8F6F1;
+    --white: #FFFFFF;
+    --text: #0F1F3D;
+    --text-muted: #6B7A94;
+    --border: rgba(15,31,61,0.12);
+  }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--text); min-height: 100vh; }
+
+  header {
+    background: var(--navy);
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(200,153,58,0.25);
+  }
+  .logo { font-family: 'DM Serif Display', serif; color: var(--white); font-size: 1.6rem; letter-spacing: 0.01em; line-height: 1.1; text-decoration: none; }
+  .logo span { color: var(--gold); }
+  .back-link { font-size: 13px; color: rgba(255,255,255,0.6); text-decoration: none; }
+  .back-link:hover { color: var(--gold); }
+
+  main { max-width: 560px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+
+  .oh-badge { display: inline-block; background: var(--navy); color: var(--gold-light); font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 1rem; }
+  h1 { font-family: 'DM Serif Display', serif; color: var(--navy); font-size: clamp(1.6rem, 5vw, 2.1rem); line-height: 1.2; margin-bottom: 0.6rem; }
+  h1 em { color: var(--gold); font-style: normal; }
+  .subtext { color: var(--text-muted); font-size: 14.5px; line-height: 1.6; margin-bottom: 2rem; max-width: 440px; }
+
+  .oh-form-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 1.75rem; }
+  .oh-form { display: flex; flex-direction: column; gap: 0.9rem; }
+  .oh-field label { display: block; font-size: 12px; font-weight: 600; color: var(--text-muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .oh-form input, .oh-form textarea {
+    width: 100%; padding: 13px 14px; border-radius: 10px;
+    border: 1px solid var(--border); font-family: inherit; font-size: 15px;
+    color: var(--text); background: var(--cream);
+  }
+  .oh-form input:focus, .oh-form textarea:focus { outline: none; border-color: var(--gold); background: var(--white); }
+
+  .price-input-wrap {
+    display: flex; align-items: center; border: 1px solid var(--border);
+    border-radius: 10px; background: var(--cream); overflow: hidden;
+  }
+  .price-input-wrap:focus-within { border-color: var(--gold); background: var(--white); }
+  .price-input-wrap .prefix { padding: 0 4px 0 14px; font-size: 16px; font-weight: 600; color: var(--text-muted); }
+  .price-input-wrap input { border: none; background: transparent; padding: 13px 14px 13px 4px; }
+  .price-input-wrap input:focus { outline: none; }
+
+  .oh-consent { display: flex; align-items: flex-start; gap: 9px; font-size: 13px; color: var(--text-muted); line-height: 1.5; cursor: pointer; padding-top: 4px; }
+  .oh-consent input[type="checkbox"] { width: 17px; height: 17px; margin-top: 2px; flex-shrink: 0; accent-color: var(--navy); cursor: pointer; }
+
+  .oh-submit {
+    background: var(--navy); color: var(--white); border: none;
+    padding: 15px 24px; border-radius: 50px; font-size: 15px; font-weight: 600;
+    cursor: pointer; transition: opacity 0.15s; margin-top: 0.5rem;
+  }
+  .oh-submit:hover { opacity: 0.88; }
+  .oh-submit:disabled { opacity: 0.6; cursor: default; }
+
+  .oh-note { font-size: 12px; color: var(--text-muted); margin-top: 1rem; text-align: center; line-height: 1.5; }
+
+  .success-card, .locked-card { display: none; background: var(--white); border: 1px solid var(--border); border-radius: 16px; padding: 2.5rem 1.75rem; text-align: center; }
+  .success-card h2, .locked-card h2 { font-family: 'DM Serif Display', serif; color: var(--navy); font-size: 1.4rem; margin-bottom: 0.5rem; }
+  .success-card p, .locked-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+
+  .prize-banner {
+    background: linear-gradient(135deg, var(--navy), var(--navy-mid));
+    border-radius: 14px; padding: 1.1rem 1.4rem; margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .prize-banner .emoji { font-size: 26px; }
+  .prize-banner .text { color: var(--white); font-size: 14px; line-height: 1.4; }
+  .prize-banner .text strong { color: var(--gold-light); }
+
+  footer { text-align: center; padding: 1.5rem; font-size: 12px; color: var(--text-muted); }
+  .equal-housing { margin-top: 6px; font-size: 11px; letter-spacing: 0.03em; }
+
+  .official-rules {
+    margin-top: 1.5rem; padding: 1.1rem 1.3rem; border-radius: 12px;
+    background: rgba(15,31,61,0.04); border: 1px solid var(--border);
+  }
+  .official-rules summary {
+    font-size: 12px; font-weight: 600; color: var(--text-muted);
+    cursor: pointer; text-transform: uppercase; letter-spacing: 0.04em;
+  }
+  .official-rules div { margin-top: 0.7rem; font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+  .official-rules div p { margin-bottom: 0.5rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="index.html">Isaac Nagel <span>| The Nagel Team</span></a>
+  <a class="back-link" href="index.html">&larr; Back to home</a>
+</header>
+
+<main>
+
+  <!-- ===== LOCKED STATE: shown if no valid code/active event ===== -->
+  <div id="lockedCard" class="locked-card">
+    <h2>This contest isn't active right now</h2>
+    <p id="lockedMessage">Guess The Price is only open during a live open house. Ask Isaac for today's entry code, or check back at the next open house!</p>
+  </div>
+
+  <!-- ===== GAME STATE: shown only if the code checks out ===== -->
+  <div id="gameWrap" style="display:none;">
+    <span class="oh-badge" id="eventBadge">Open House Today</span>
+    <h1>Guess The <em>Price.</em></h1>
+    <p class="subtext" id="eventSubtext">What do you think this home will ultimately close at? Enter your info and your guess below — closest guess wins.</p>
+
+    <div class="prize-banner">
+      <div class="emoji">🏆</div>
+      <div class="text">Closest guess to the <strong>actual closing price</strong> wins — winner announced after the home sells. <strong>Dinner's on me!</strong></div>
+    </div>
+
+    <div class="oh-form-card" id="ohFormCard">
+      <form class="oh-form" id="ohForm">
+        <div class="oh-field">
+          <label for="ohName">Full name *</label>
+          <input type="text" id="ohName" required>
+        </div>
+        <div class="oh-field">
+          <label for="ohPhone">Phone number *</label>
+          <input type="tel" id="ohPhone" required>
+        </div>
+        <div class="oh-field">
+          <label for="ohEmail">Email address *</label>
+          <input type="email" id="ohEmail" required>
+        </div>
+        <div class="oh-field">
+          <label for="ohGuess">Your guess — final closing price *</label>
+          <div class="price-input-wrap">
+            <span class="prefix">$</span>
+            <input type="number" id="ohGuess" min="1" step="1" placeholder="425,000" required>
+          </div>
+        </div>
+
+        <label class="oh-consent">
+          <input type="checkbox" id="ohConsent" required>
+          <span id="weeklySearchLabel">By entering, I agree to be contacted by phone, text, or email about this property and to find out if I've won, and to receive The Nagel Team's free weekly email of homes similar to this one. I can unsubscribe at any time. *</span>
+        </label>
+
+        <button type="submit" class="oh-submit">Submit My Guess</button>
+      </form>
+      <div class="oh-note">One entry per person, please. Trouble submitting? Text your guess to <a href="sms:9524666356">(952) 466-6356</a> instead.</div>
+    </div>
+
+    <div class="success-card" id="ohSuccess">
+      <h2>You're entered! 🎉</h2>
+      <p>Good luck — I'll reach out to the winner once the home closes.</p>
+    </div>
+
+    <details class="official-rules">
+      <summary>Official Contest Rules</summary>
+      <div id="officialRulesText"><!-- filled in by JS once the event/address is known --></div>
+    </details>
+  </div>
+
+</main>
+
+<footer>
+  &copy; 2026 Isaac Nagel · The Nagel Team · Keller Williams Premier Realty · Lake Minnetonka
+  <div class="equal-housing">⌂ Equal Housing Opportunity</div>
+</footer>
+
+<script>
+  // ============================================================
+  // ACTIVE EVENTS — this is how the page is "locked" to only
+  // work during a real open house.
+  //
+  // To add a new open house: copy one block below, give it a new
+  // unique "code" (that's what you write on your printed sign /
+  // put in the QR code), the address, and the date + time window
+  // it should be accessible. Anything outside that code+window
+  // combo shows the "not active" message instead of the form.
+  //
+  // date format: "YYYY-MM-DD"   time format: 24-hour "HH:MM"
+  // (times are based on the visitor's own device clock)
+  // ============================================================
+  var ACTIVE_EVENTS = [
+    {
+      code: "ARBORLN",                    // <-- what's printed on the sign / in the QR code
+      address: "3523 Arbor Ln, Minnetonka",
+      date: "2026-10-03",                 // Day 1 of this open house
+      startTime: "12:00",
+      endTime: "14:00"
+    },
+    {
+      code: "ARBORLN",                    // same code, same address, day 2
+      address: "3523 Arbor Ln, Minnetonka",
+      date: "2026-10-04",                 // Day 2 of this open house
+      startTime: "12:00",
+      endTime: "14:00"
+    }
+    // Add more events here, comma-separated, same shape as above.
+  ];
+
+  // TODO: paste your unified Google Apps Script Web App URL here (same URL as your other forms)
+  var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw6gShW2B6mgh1YqFE0BYzDHBVPWBQXkQdeNEsm6JE9u9-WF2XvYWjFQt10_v2wNKxT7Q/exec';
+
+  function getUrlParam(name) {
+    var params = new URLSearchParams(window.location.search);
+    return params.get(name);
+  }
+
+  function findActiveEvent(code) {
+    if (!code) return null;
+    var now = new Date();
+
+    for (var i = 0; i < ACTIVE_EVENTS.length; i++) {
+      var ev = ACTIVE_EVENTS[i];
+      if (ev.code.toUpperCase() !== code.toUpperCase()) continue;
+
+      var start = new Date(ev.date + 'T' + ev.startTime + ':00');
+      var end = new Date(ev.date + 'T' + ev.endTime + ':00');
+
+      if (now >= start && now <= end) {
+        return ev;
+      }
+    }
+    return null;
+  }
+
+  var codeFromUrl = getUrlParam('code');
+  var activeEvent = findActiveEvent(codeFromUrl);
+
+  if (activeEvent) {
+    document.getElementById('gameWrap').style.display = 'block';
+    document.getElementById('eventSubtext').textContent =
+      'What do you think ' + activeEvent.address + ' will ultimately close at? Enter your info and your guess below — closest guess wins.';
+    document.getElementById('weeklySearchLabel').textContent =
+      "By entering, I agree to be contacted by phone, text, or email about " + activeEvent.address + " and to find out if I've won, and to receive The Nagel Team's free weekly email of homes similar to this one. I can unsubscribe at any time. *";
+
+    document.getElementById('officialRulesText').innerHTML =
+      '<p><strong>No purchase necessary.</strong> Entry is free and open to adults 18+ who visit the open house at ' + activeEvent.address + ' during the dates/times this entry code is active.</p>' +
+      '<p><strong>How the winner is chosen:</strong> the entrant whose guess is closest to the home’s actual final closing price wins, as determined once the sale closes. Ties are broken by whichever eligible guess was submitted first. If the home does not close within a reasonable time, the contest may be cancelled and no prize awarded.</p>' +
+      '<p><strong>Prize:</strong> one $50 prize ("Dinner’s on me") per listing, awarded as cash or a gift card at the winner’s choice. One entry per person. Limit one prize per household.</p>' +
+      '<p><strong>Winner notification:</strong> the winner will be contacted using the phone number or email provided at entry, within a few weeks of the home’s closing.</p>' +
+      '<p>This contest is run solely by Isaac Nagel / The Nagel Team, Keller Williams Premier Realty, and is not sponsored, endorsed, or administered by NorthstarMLS, Zillow, Facebook, or any other platform. Void where prohibited by law.</p>';
+  } else {
+    document.getElementById('lockedCard').style.display = 'block';
+  }
+
+  document.getElementById('ohForm') && document.getElementById('ohForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var name = document.getElementById('ohName').value.trim();
+    var phone = document.getElementById('ohPhone').value.trim();
+    var email = document.getElementById('ohEmail').value.trim();
+    var guess = document.getElementById('ohGuess').value.trim();
+    var consent = document.getElementById('ohConsent').checked;
+
+    if (!name || !phone || !email) { alert('Please fill in your name, phone, and email.'); return; }
+    if (!guess) { alert('Please enter your price guess.'); return; }
+    if (!consent) { alert('Please check the consent box to continue.'); return; }
+
+    var submitBtn = document.querySelector('#ohForm .oh-submit');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting...';
+
+    var payload = {
+      sheet: 'PriceGuesses',
+      name: name,
+      phone: phone,
+      email: email,
+      eventAddress: activeEvent.address,
+      eventCode: activeEvent.code,
+      guess: guess,
+      consent: consent,
+      marketingConsent: consent
+    };
+
+    fetch(GOOGLE_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify(payload)
+    })
+      .then(function() {
+        document.getElementById('ohFormCard').style.display = 'none';
+        document.getElementById('ohSuccess').style.display = 'block';
+      })
+      .catch(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Submit My Guess';
+        alert("Something went wrong submitting — please try again or text your guess to (952) 466-6356.");
+      });
+  });
+</script>
+
+</body>
+</html>
