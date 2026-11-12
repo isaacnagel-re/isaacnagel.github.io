@@ -1,168 +1,25 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#173d33">
-<meta name="description" content="Join Scott and Isaac Nagel for the 5th Annual Zumbra Turkey Trot, Walk & Roll on Thanksgiving morning, November 26, 2026.">
-<title>5th Annual Zumbra Turkey Trot | Thanksgiving 2026</title>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#173d33"><meta name="description" content="Join the 5th Annual Zumbra Turkey Trot, Walk & Roll on Thanksgiving morning, November 26, 2026. Optional lake plunge and sauna!"><title>5th Annual Zumbra Turkey Trot • Thanksgiving 2026</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="5th Annual Zumbra Turkey Trot 🦃">
+<meta property="og:description" content="Thanksgiving • November 26 at 10 AM • 5K, coffee, donuts, lake plunge & sauna. Hosted by Scott & Isaac Nagel.">
+<meta property="og:url" content="https://isaacnagel.com/turkeytrot/">
+<meta property="og:image" content="https://isaacnagel.com/turkeytrot/turkey-preview.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://isaacnagel.com/turkeytrot/turkey-preview.jpg">
+<link rel="icon" type="image/png" href="turkey-icon.png">
+<link rel="apple-touch-icon" href="turkey-icon.png">
 <style>
-*{box-sizing:border-box}
-body{margin:0;background:#e9e5db;color:#243a31;font-family:Arial,Helvetica,sans-serif}
-.page{max-width:680px;margin:24px auto;background:#faf4e8;box-shadow:0 15px 55px #0002;overflow:hidden;border-radius:18px}
-.hero{background:linear-gradient(155deg,#173d33,#285b49 75%,#8a4b2b);color:white;padding:40px 24px;text-align:center}
-.eyebrow{font-size:12px;letter-spacing:3px;font-weight:800;color:#f9d58a}
-.big{font-family:Georgia,serif;font-size:clamp(39px,9vw,67px);line-height:1.05;margin:20px 0 8px}
-.gold{color:#ffd28a}
-.pill{display:inline-block;border:1px solid #d8b87a;border-radius:30px;padding:9px 16px;font-size:12px;margin-top:18px}
-.tagline{font-family:Georgia,serif;font-size:21px;margin-top:24px}
-.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:20px}
-.count>div{background:#ffffff18;border:1px solid #ffffff30;border-radius:12px;padding:13px 4px}
-.num{font-size:29px;font-weight:800;display:block}
-.unit{font-size:10px;text-transform:uppercase;letter-spacing:1px}
-.section{padding:26px 24px;border-bottom:1px solid #e5d9c7}
-h2{font-family:Georgia,serif;font-size:26px;margin:0 0 17px}
-.details{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.tile{background:white;border-radius:13px;padding:16px;border:1px solid #e9dfce}
-.tile small{display:block;color:#7c7366;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:8px}
-.tile strong{font-size:16px;line-height:1.4}
-.wide{grid-column:span 2}
-.action{display:block;width:100%;padding:15px;text-align:center;border-radius:11px;font-weight:800;text-decoration:none;margin-top:12px;font-size:15px;border:0;cursor:pointer;font-family:inherit}
-.primary{background:#c46d35;color:white}
-.secondary{background:#e5eadd;color:#234638}
-.activity{display:flex;align-items:center;gap:15px;margin:18px 0}
-.emoji{width:54px;height:54px;flex-shrink:0;display:grid;place-items:center;border-radius:13px;background:#e8ecdf;font-size:27px}
-.activity strong{font-size:16px}
-.activity p{font-size:13px;color:#716b5e;line-height:1.5;margin:5px 0 0}
-.donation{background:#e9e5d6}
-.donation p,.intro{font-size:15px;line-height:1.7}
-.rsvp{text-align:center}
-.stepper{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0}
-.stepper button{background:#e8e3d6;border:0;border-radius:10px;width:48px;height:48px;font-size:27px;color:#254636;cursor:pointer}
-.people{font-size:35px;font-weight:800;min-width:85px}
-.footer{background:#234638;color:white;text-align:center;padding:32px 20px}
-.footer h2{margin-bottom:10px}
-.footer p{color:#f3d19a;font-size:15px}
-@media(max-width:500px){.page{margin:0;border-radius:0}.hero{padding:32px 18px}.section{padding:23px 18px}.big{font-size:43px}}
-</style>
-</head>
-<body>
-
-<main class="page">
-<header class="hero">
-<div class="eyebrow">THANKSGIVING • LAKE ZUMBRA</div>
-<div style="font-size:60px;margin-top:17px">🦃 🍂</div>
-<h1 class="big">ZUMBRA<br><span class="gold">TURKEY TROT</span></h1>
-<div style="font-family:Georgia,serif;font-size:26px;font-style:italic">Walk & Roll</div>
-<div class="pill">5TH ANNUAL • EST. 2022</div>
-<div class="tagline">Makin' room for pie since 2022!</div>
-<p style="font-size:13px;opacity:.9">America's shortest, fastest, non-sanctioned race</p>
-
-<div style="height:1px;background:#ffffff50;margin:28px 0 20px"></div>
-<div class="eyebrow">COUNTDOWN TO THE STARTING GUN</div>
-<div class="count">
-<div><span class="num" id="days">00</span><span class="unit">Days</span></div>
-<div><span class="num" id="hours">00</span><span class="unit">Hours</span></div>
-<div><span class="num" id="mins">00</span><span class="unit">Minutes</span></div>
-<div><span class="num" id="secs">00</span><span class="unit">Seconds</span></div>
-</div>
-</header>
-
-<section class="section">
-<h2>🍁 The Big Morning</h2>
-<p class="intro">While the turkey bakes, come on out with family, friends, or on your own for fresh air, smiles, and possibly a little exercise. Rain or shine, the starting gun sounds at 10:00 AM!</p>
-<div class="details">
-<div class="tile"><small>📅 When</small><strong>Thursday<br>November 26, 2026</strong></div>
-<div class="tile"><small>⏰ Starting Gun</small><strong>10:00 AM Sharp</strong><p style="font-size:12px;margin-bottom:0">Rain or shine!</p></div>
-<div class="tile wide"><small>📍 Starting Line</small><strong>Katie & Scott Nagel's Driveway</strong><div style="margin-top:6px">5550 Zumbra Lane</div></div>
-</div>
-<a class="action secondary" href="https://www.google.com/maps/search/?api=1&query=5550%20Zumbra%20Ln%2C%20Minnesota" target="_blank" rel="noopener noreferrer">📍 Get Directions</a>
-</section>
-
-<section class="section">
-<h2>Run. Walk. Roll. Plunge.</h2>
-<p style="color:#716b5e;font-size:14px">Come for the fresh air. Stay for the fun.</p>
-
-<div class="activity"><div class="emoji">🏃</div><div><strong>Thanksgiving 5K</strong><p>All paces and abilities welcome. Bring your family, friends, or just yourself.</p></div></div>
-<div class="activity"><div class="emoji">☕</div><div><strong>Coffee & Donuts</strong><p>Fuel for runners, walkers, rollers, and well-wishers alike.</p></div></div>
-<div class="activity"><div class="emoji">🧊</div><div><strong>Lake Zumbra Plunge</strong><p>Brave the chilly lake after the race. Completely optional!</p></div></div>
-<div class="activity"><div class="emoji">🔥</div><div><strong>Post-Plunge Sauna</strong><p>Warm up before heading home to carve your turkey.</p></div></div>
-</section>
-
-<section class="section donation">
-<h2>🥫 Give Thanks. Give Back.</h2>
-<p>We'll be collecting food and monetary donations for the local food shelf. We invite you to share in your blessings and help neighbors in need.</p>
-</section>
-
-<section class="section rsvp">
-<h2>Are You Coming?</h2>
-<p class="intro">Let Scott know how many people are attending so there's plenty of coffee and donuts for everyone!</p>
-<div style="font-size:12px;font-weight:bold;letter-spacing:1px;color:#716b5e">HOW MANY PEOPLE?</div>
-<div class="stepper">
-<button id="minus" type="button" aria-label="Remove one attendee">−</button>
-<div><div class="people" id="people">1</div><div style="font-size:11px;color:#716b5e">ATTENDING</div></div>
-<button id="plus" type="button" aria-label="Add one attendee">+</button>
-</div>
-<a id="rsvpLink" class="action primary" href="#">💬 Text Scott to RSVP</a>
-<a class="action secondary" href="tel:9524842126">📞 Call Scott • 952-484-2126</a>
-<a id="calendar" class="action secondary" href="#" target="_blank" rel="noopener noreferrer">📅 Add to Google Calendar</a>
-<p style="font-size:12px;color:#716b5e;margin-top:16px">RSVP opens your messaging app with a prewritten text. Just hit send!</p>
-</section>
-
-<footer class="footer">
-<h2>See You at the Starting Line!</h2>
-<p><strong>Hosted by Scott & Isaac Nagel</strong></p>
-<div style="font-size:13px;opacity:.85;margin-top:17px">No race experience required. Good spirits encouraged. 🥧</div>
-</footer>
-</main>
-
-<script>
-const target=new Date("2026-11-26T10:00:00-06:00").getTime();
-
-function countdown(){
- const diff=Math.max(0,target-Date.now());
- const values={
-  days:Math.floor(diff/86400000),
-  hours:Math.floor(diff/3600000)%24,
-  mins:Math.floor(diff/60000)%60,
-  secs:Math.floor(diff/1000)%60
- };
- for(const [id,value] of Object.entries(values)){
-  document.getElementById(id).textContent=String(value).padStart(2,"0");
- }
-}
-countdown();
-setInterval(countdown,1000);
-
-let attendees=1;
-const people=document.getElementById("people");
-const rsvp=document.getElementById("rsvpLink");
-
-function updateRSVP(){
- people.textContent=attendees;
- const message="Hi Scott! Count us in for the 5th Annual Zumbra Turkey Trot. We will have "+attendees+" "+(attendees===1?"person":"people")+" attending!";
- rsvp.href="sms:9524842126?body="+encodeURIComponent(message);
-}
-document.getElementById("minus").addEventListener("click",()=>{
- attendees=Math.max(1,attendees-1);
- updateRSVP();
-});
-document.getElementById("plus").addEventListener("click",()=>{
- attendees=Math.min(99,attendees+1);
- updateRSVP();
-});
-updateRSVP();
-
-const calendarParams=new URLSearchParams({
- action:"TEMPLATE",
- text:"5th Annual Zumbra Turkey Trot, Walk & Roll",
- dates:"20261126T160000Z/20261126T180000Z",
- details:"Thanksgiving 5K, coffee, donuts, optional Lake Zumbra plunge and sauna. Food or monetary donations for the local food shelf welcome. RSVP to Scott: 952-484-2126.",
- location:"5550 Zumbra Ln, Minnesota"
-});
-document.getElementById("calendar").href="https://calendar.google.com/calendar/render?"+calendarParams.toString();
-</script>
-
-</body>
-</html>
+:root{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#243a31;background:#e8e4d9}*{box-sizing:border-box}body{margin:0;padding:24px 12px}main{max-width:580px;margin:auto;background:#faf4e8;border-radius:22px;overflow:hidden;box-shadow:0 15px 55px #142b2430}.hero{background:radial-gradient(ellipse at 15% 10%,#537b55 0,transparent 50%),linear-gradient(150deg,#173d33,#285b49 70%,#8a4b2b);color:white;padding:42px 24px 32px;text-align:center}.eyebrow{font-size:12px;letter-spacing:2.7px;font-weight:800;color:#f9d58a}.big{font-family:Georgia,serif;font-size:clamp(39px,9vw,65px);line-height:1.02;margin:16px 0 8px}.gold{color:#ffd28a}.pill{display:inline-block;border:1px solid #d8b87a;border-radius:40px;padding:8px 14px;font-size:12px;margin:18px 0 0}.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:21px}.count>div{background:#ffffff1c;border:1px solid #ffffff30;border-radius:13px;padding:11px 3px}.num{font-size:clamp(23px,6vw,31px);font-weight:800;display:block;font-variant-numeric:tabular-nums}.unit{font-size:10px;text-transform:uppercase;letter-spacing:1px}.section{padding:26px 24px;border-bottom:1px solid #e5d9c7}.serif{font-family:Georgia,serif;font-weight:bold}.details{display:grid;grid-template-columns:1fr 1fr;gap:10px}.tile{background:white;border-radius:13px;padding:15px;min-height:96px;border:1px solid #e9dfce}.tile small{display:block;color:#7c7366;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:7px}.tile strong{font-size:15px}.action{display:block;width:100%;padding:15px 12px;text-align:center;border-radius:12px;font-weight:800;text-decoration:none;margin-top:11px;font-size:14px;border:0;cursor:pointer;font-family:inherit}.primary{background:#c46d35;color:white}.secondary{background:#e5eadd;color:#234638}.activity{display:flex;align-items:center;gap:13px;margin:17px 0}.emoji{width:50px;height:50px;flex-shrink:0;display:grid;place-items:center;border-radius:13px;background:#e8ecdf;font-size:26px}.muted{color:#716b5e;font-size:13px;line-height:1.55}.stepper{display:flex;align-items:center;justify-content:center;gap:16px;margin:17px 0}.stepper button{background:#e8e3d6;border:0;border-radius:10px;width:46px;height:46px;font-size:26px;color:#254636;cursor:pointer}.stepper output{font-size:32px;font-weight:800;display:block;min-width:65px}.footer{background:#234638;color:white;text-align:center;padding:27px 18px}.fine{font-size:12px;color:#716b5e;line-height:1.5;margin-top:11px}a:focus-visible,button:focus-visible{outline:3px solid #e4a642;outline-offset:3px}@media(max-width:380px){body{padding:0}main{border-radius:0}.section{padding:22px 16px}.hero{padding:34px 16px}}
+</style></head><body><main>
+<header class="hero"><div class="eyebrow">THANKSGIVING • LAKE ZUMBRA</div><div style="font-size:55px;margin:14px 0 2px" aria-hidden="true">🦃 🍂</div><h1 class="big">ZUMBRA<br><span class="gold">TURKEY TROT</span></h1><div style="font-family:Georgia,serif;font-size:25px;font-style:italic">Walk & Roll</div><div class="pill">5TH ANNUAL • EST. 2022</div><div style="font-family:Georgia,serif;font-size:20px;margin-top:22px">Makin’ room for pie since 2022!</div><p style="font-size:13px;opacity:.88">America’s shortest, fastest, non-sanctioned race</p><div style="height:1px;background:#ffffff50;margin:25px 0 16px"></div><div class="eyebrow">THE THANKSGIVING COUNTDOWN</div><div class="count" aria-label="Countdown to event"><div><span class="num" id="days">--</span><span class="unit">Days</span></div><div><span class="num" id="hours">--</span><span class="unit">Hours</span></div><div><span class="num" id="mins">--</span><span class="unit">Minutes</span></div><div><span class="num" id="secs">--</span><span class="unit">Seconds</span></div></div><p id="count-message" style="font-size:12px;margin-bottom:0"></p></header>
+<section class="section"><h2 class="serif" style="font-size:25px;margin:0 0 16px">The big morning 🍁</h2><div class="details"><div class="tile"><small>📅 When</small><strong>Thursday<br>November 26, 2026</strong></div><div class="tile"><small>⏰ Start time</small><strong>10:00 AM Sharp</strong><div class="muted">Rain or shine!</div></div><div class="tile" style="grid-column:span 2"><small>📍 Starting line</small><strong>Katie & Scott Nagel’s Driveway</strong><div style="font-size:13px;margin-top:6px">5550 Zumbra Ln, Minnesota</div></div></div><a class="action secondary" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/?api=1&amp;query=5550%20Zumbra%20Ln%2C%20Minnesota">📍 Get Directions</a></section>
+<section class="section"><h2 class="serif" style="font-size:25px;margin:0 0 5px">Run. Walk. Roll. Plunge.</h2><p class="muted" style="margin:0 0 16px">Come for the fresh air. Stay for the fun.</p><div class="activity"><div class="emoji">🏃</div><div><strong>Thanksgiving 5K</strong><div class="muted">All paces and abilities welcome. Bring family, friends, or just yourself.</div></div></div><div class="activity"><div class="emoji">☕</div><div><strong>Coffee & Donuts</strong><div class="muted">Fuel for participants and well-wishers alike.</div></div></div><div class="activity"><div class="emoji">🧊</div><div><strong>Lake Zumbra Plunge</strong><div class="muted">Brave the chilly water after the race — completely optional!</div></div></div><div class="activity"><div class="emoji">🔥</div><div><strong>Post-Plunge Sauna</strong><div class="muted">Warm up before heading home to carve the turkey.</div></div></div></section>
+<section class="section" style="background:#e9e5d6"><h2 class="serif" style="font-size:24px;margin:0">🥫 Give Thanks. Give Back.</h2><p style="font-size:14px;line-height:1.65;margin-bottom:0">We’ll be collecting food and monetary donations for the local food shelf. Join us in sharing our blessings with neighbors in need.</p></section>
+<section class="section" style="text-align:center"><h2 class="serif" style="font-size:28px;margin:0">Are you coming?</h2><p class="muted">Let Scott know how many are coming so there's plenty of coffee and donuts for everyone!</p><div class="stepper"><button id="minus" aria-label="Remove one attendee">−</button><div><output id="people" aria-live="polite">1</output><div style="font-size:11px;color:#716b5e">ATTENDING</div></div><button id="plus" aria-label="Add one attendee">+</button></div><a id="rsvp" class="action primary" href="#">💬 Text Scott to RSVP</a><p class="fine">This opens your text-message app with a prewritten RSVP. Press Send to confirm your headcount with Scott.</p><a class="action secondary" href="tel:+19524842126">📞 Call Scott • 952-484-2126</a><a id="calendar" class="action secondary" target="_blank" rel="noopener noreferrer">📅 Add to Google Calendar</a></section>
+<footer class="footer"><div style="font-family:Georgia,serif;font-size:24px">See you at the starting line!</div><div style="font-size:13px;margin-top:9px;color:#f3d19a">Hosted by Scott &amp; Isaac Nagel • Lake Zumbra</div><div style="font-size:12px;margin-top:15px;opacity:.8">No race experience required. Good spirits encouraged. 🥧</div></footer>
+</main><script>
+(()=>{'use strict';const $=id=>document.getElementById(id);let people=1;function update(){ $('people').textContent=people;const msg=`Hi Scott! Count us in for the 5th Annual Zumbra Turkey Trot. We will have ${people} ${people===1?'person':'people'} attending!`; $('rsvp').href='sms:+19524842126?body='+encodeURIComponent(msg)}$('minus').addEventListener('click',()=>{people=Math.max(1,people-1);update()});$('plus').addEventListener('click',()=>{people=Math.min(99,people+1);update()});update();function tick(){const diff=new Date('2026-11-26T10:00:00-06:00').getTime()-Date.now();if(diff<=0){['days','hours','mins','secs'].forEach(x=>$(x).textContent='00');$('count-message').textContent='Happy Thanksgiving!';return}const vals=[Math.floor(diff/86400000),Math.floor(diff/3600000)%24,Math.floor(diff/60000)%60,Math.floor(diff/1000)%60];['days','hours','mins','secs'].forEach((x,i)=>$(x).textContent=String(vals[i]).padStart(2,'0'))}tick();setInterval(tick,1000);$('calendar').href='https://calendar.google.com/calendar/render?action=TEMPLATE&text='+encodeURIComponent('5th Annual Zumbra Turkey Trot, Walk & Roll')+'&dates=20261126T160000Z/20261126T180000Z&details='+encodeURIComponent('5K, coffee, donuts, optional lake plunge and sauna. Food or monetary donations for the local food shelf welcome. RSVP to Scott: 952-484-2126. Event starts at 10 AM sharp; end time is an estimate.')+'&location='+encodeURIComponent('5550 Zumbra Ln, Minnesota');})();
+</script></body></html>
